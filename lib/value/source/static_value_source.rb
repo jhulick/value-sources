@@ -9,8 +9,9 @@ module Value
       attr_reader :value
 
       # initialize the static value from config, etc.
-      def initialize(data)
+      def initialize(data, params)
         @value = data
+        @params = params
       end
 
       def value(value)
