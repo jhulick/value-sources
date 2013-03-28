@@ -14,12 +14,13 @@
   ../lib/value/value_source
   ../lib/value/priority_queue
 
+  ../lib/value/source/base_value_source
+  ../lib/value/source/static_value_source
+
   ../lib/value/controller/base_controller
   ../lib/value/controller/static_value_controller
 ].each {|f| require f }
 
 module Value
-  module Services
-    class Forbidden < StandardError; end
-  end
+  class Forbidden < StandardError; end
 end

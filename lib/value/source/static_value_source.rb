@@ -9,16 +9,19 @@ module Value
       attr_reader :value
 
       # initialize the static value from config, etc.
-      def initialize(name, &block)
-        @name, @values = name, {}
-        instance_eval(&block)
-        raise "value required for #{@name}" unless @value
+      def initialize(data)
+        puts "StaticVS: #{data}"
+        @value = data
       end
-    end
 
-    def value(value)
-      @value = value
-    end
+      def value(value)
+        @value = value
+      end
 
+      def process
+        @value
+      end
+
+    end
   end
 end

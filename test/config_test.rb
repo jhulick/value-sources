@@ -55,7 +55,7 @@ class ConfigTest < MiniTest::Unit::TestCase
     config = Value::Config.new do
       application 'value.exercise.bfelob' do
         value_source 'my-value-source' do
-          klass 'StaticValueSource'
+          klass "StaticValueSource"
           value 'test-value'
           specification 'test'
           params :a => 'a', :b => 'b'
@@ -63,7 +63,7 @@ class ConfigTest < MiniTest::Unit::TestCase
       end
     end
     assert_equal 1, config.applications.size
-    assert_equal 'test-value', config.applications['value.exercise.bfelob'].values['my-value-source'].data
+    assert_equal 'test-value', config.applications['value.exercise.bfelob'].values['my-value-source'].process
   end
 
   def test_multiple_sources
