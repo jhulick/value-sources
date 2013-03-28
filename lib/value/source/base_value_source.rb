@@ -45,6 +45,10 @@ module Value
         create_parser
       end
 
+      def send_error(condition, obj=nil)
+        puts "#{condition}"
+      end
+
     end
   end
 end

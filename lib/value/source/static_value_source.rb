@@ -10,7 +10,6 @@ module Value
 
       # initialize the static value from config, etc.
       def initialize(data)
-        puts "StaticVS: #{data}"
         @value = data
       end
 
@@ -19,6 +18,7 @@ module Value
       end
 
       def process
+        # custom vs code goes here
         @value
       end
 

@@ -18,15 +18,10 @@ module Value
       @data = value
     end
 
-    def process
-      # calculate value
-      @data
-    end
-
     # TODO: Create a new controller instance to process the value source.
     def process
       begin
-        Object.const_get('Value').const_get('Source').const_get('StaticValueSource').new(@data).process
+        Object.const_get('Value').const_get('Source').const_get(@klass).new(@data).process
       rescue Forbidden
         #log.warn("Authorization failed for #{klass}")
         puts "Authorization failed for #{klass}"
