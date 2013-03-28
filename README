@@ -1,0 +1,20 @@
+== Welcome to Value Source Services
+
+Value Sources are dynamically generated data based on a specification and custom
+data source. Send a command to the service and it runs the value source.
+
+== Usage
+
+1. gem install vs-services
+
+== Dependencies
+
+Value Services requires Ruby 1.9.2 or better.
+
+== Contact
+
+* Jeremy Hulick <jeremy.hulick@gmail.com>
+
+== License
+
+
