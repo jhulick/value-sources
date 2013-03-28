@@ -4,7 +4,7 @@ require 'rake/testtask'
 require 'rubygems/package_task'
 require_relative 'lib/value/services/version'
 
-CLOBBER.include('pkg', 'web/javascripts', 'web/stylesheets/app.css')
+CLOBBER.include('pkg')
 
 spec = Gem::Specification.new do |s|
   s.name    = "value-services"
@@ -12,8 +12,7 @@ spec = Gem::Specification.new do |s|
 
   s.summary     = "A DSL that encapsulates the Value pattern in the form of executable components."
   s.description = "Value Services are dynamically generated data based on parameters and specifications.
-Send a command to the service and it runs on every system in the group. Services, files
-and permissions are managed via the bundled web application."
+Send a command to the service and it runs value source."
 
   s.authors      = ["Jeremy Hulick"]
   s.email        = %w[jeremy.hulick@gmail.com]
@@ -31,10 +30,8 @@ and permissions are managed via the bundled web application."
   s.required_ruby_version = '>= 1.9.2'
 end
 
-# Set gem file list after CoffeeScripts have been compiled, so web/javascripts/
-# is included in the gem.
 task :gemprep do
-  spec.files = FileList['[A-Z]*', '{bin,lib,conf}/**/*']
+  spec.files = FileList['[A-Z]*', '{lib,conf}/**/*']
   Gem::PackageTask.new(spec).define
   Rake::Task['gem'].invoke
 end
